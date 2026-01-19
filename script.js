@@ -2,17 +2,16 @@ insertedWords = []
 
 function saveWord() {
     let textBoxValue = document.getElementById("insertTextBoxId").value;
-    insertedWords.push(textBoxValue);
+    insertedWords.push(document.getElementById("insertTextBoxId").value);
 }
 
 function findWord() {
     let textBoxValue = document.getElementById("findTextBoxId").value;
-    outputTextBox = document.createElement("input");
-    outputTextBox.readoOnly = true;
+    let divOutputBox = document.createElement("div");
     if (insertedWords.includes(textBoxValue) == true) {
-        outputTextBox.value = "Word \"" + textBoxValue + "\" has found.";
+        divOutputBox.append("Word \"" + textBoxValue + "\" has found.");
     } else {
-        outputTextBox.value = "Word \"" + textBoxValue + "\" has not found.";
+        divOutputBox.append("Word \"" + textBoxValue + "\" has not found.");
     }
-    document.body.appendChild(outputTextBox);
+    document.body.appendChild(divOutputBox);
 }
