@@ -7,11 +7,11 @@ function saveWord() {
 
 function findWord() {
     let textBoxValue = document.getElementById("findTextBoxId").value;
-    let divOutputBox = document.createElement("div");
+    let divOutput = document.createElement("div");
     if (insertedWords.includes(textBoxValue) == true) {
-        divOutputBox.append("Word \"" + textBoxValue + "\" has found.");
+        divOutput.append("Word \"" + textBoxValue + "\" has found.");
     } else {
-        divOutputBox.append("Word \"" + textBoxValue + "\" has not found.");
+        divOutput.append("Word \"" + textBoxValue + "\" has not found.");
     }
-    document.body.appendChild(divOutputBox);
+    document.body.appendChild(divOutput);
 }
